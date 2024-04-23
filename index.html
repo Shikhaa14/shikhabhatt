@@ -1232,7 +1232,7 @@
             <h2>Contact</h2>
           </div>
 
-          <div class="row align-items-center justify-content-center">
+          <div class="row align-items-center">
             <div class="col-lg-5">
               <img src="assets/img/contactus-svg.png" style="width: 100%" />
             </div>
@@ -1264,9 +1264,14 @@
                 </div>
               </div>
             </div>
-
+            <!-- 
             <div class="col-lg-6 mt-5 mt-lg-0">
-              <form id="contactForm" class="php-email-form">
+              <form
+                id="php-email-form"
+                class="php-email-form"
+                action="sendEmail.php"
+                method="post"
+              >
                 <div class="row">
                   <div class="col-md-6 form-group">
                     <input
@@ -1322,7 +1327,7 @@
                   <button type="submit">Send Message</button>
                 </div>
               </form>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -1375,34 +1380,6 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const form = document.getElementById("contactForm");
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault(); // Prevent the form from submitting normally
-
-          const formData = new FormData(form);
-
-          fetch("sendEmail.php", {
-            method: "POST",
-            body: formData,
-          })
-            .then((response) => {
-              if (response.ok) {
-                alert("Email sent successfully!");
-                form.reset();
-              } else {
-                alert("Failed to send email. Please try again later.");
-              }
-            })
-            .catch((error) => {
-              console.error("Error:", error);
-              alert("An error occurred. Please try again later.");
-            });
-        });
-      });
-    </script>
 
     <!-- <script>
       document.addEventListener("DOMContentLoaded", function () {
