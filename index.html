@@ -1232,7 +1232,7 @@
             <h2>Contact</h2>
           </div>
 
-          <div class="row align-items-center">
+          <div class="row align-items-center justify-content-center">
             <div class="col-lg-5">
               <img src="assets/img/contactus-svg.png" style="width: 100%" />
             </div>
@@ -1264,14 +1264,9 @@
                 </div>
               </div>
             </div>
-            <!-- 
+
             <div class="col-lg-6 mt-5 mt-lg-0">
-              <form
-                id="php-email-form"
-                class="php-email-form"
-                action="sendEmail.php"
-                method="post"
-              >
+              <form class="php-email-form" method="POST">
                 <div class="row">
                   <div class="col-md-6 form-group">
                     <input
@@ -1326,8 +1321,20 @@
                 <div class="text-center">
                   <button type="submit">Send Message</button>
                 </div>
+                <input type="hidden" name="_captcha" value="false" />
+                <input
+                  type="hidden"
+                  name="_next"
+                  value="https://shikhaa14.github.io/shikhabhatt"
+                />
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="Email from Personal Website"
+                />
+                <input type="hidden" name="_template" value="table" />
               </form>
-            </div> -->
+            </div>
           </div>
         </div>
       </section>
@@ -1381,38 +1388,7 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document
-          .getElementById("php-email-form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            var formData = new FormData(this);
-            console.log(formData, "formdata");
-
-            fetch("sendEmail.php", {
-              method: "POST",
-              body: formData,
-            })
-              .then((response) => response.text())
-              .then((data) => {
-                console.log(data, "data");
-                // You can add further actions here if needed
-
-                // Example: Display success message
-                document.querySelector(".sent-message").style.display = "block";
-              })
-              .catch((error) => {
-                console.error("Error:", error);
-
-                // Example: Display error message
-                document.querySelector(".error-message").style.display =
-                  "block";
-              });
-          });
-      });
-    </script> -->
+    <script></script>
 
     <!-- <script>
       $("form#php-email-form").submit(function (e) {
